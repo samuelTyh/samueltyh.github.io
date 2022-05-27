@@ -43,10 +43,10 @@ def ping():
 - Log in and click on the Cronjobs tab. And click on “Create cronjob”.
 - Fill in the details. Enter URL according to your GET method. For example, my URL will be `https://you.herokuapp.com/ping`
 
-![](assets/img/posts/schedule_example.mov)
+![](https://raw.githubusercontent.com/samuelTyh/samuelTyh.github.io/master/assets/img/posts/schedule_example.mov)
 
 Schedule the execution time from 8 to 23 every 30 minutes every day
 
 - You can also check the execution detail in dashboard
 
-[ ![](assets/img/posts/cronjob_dashboard.png){:class="img-responsive"} ](assets/img/posts/cronjob_dashboard.png)
+[ ![](https://raw.githubusercontent.com/samuelTyh/samuelTyh.github.io/master/assets/img/posts/cronjob_dashboard.png){:class="img-responsive"} ](https://raw.githubusercontent.com/samuelTyh/samuelTyh.github.io/master/assets/img/posts/cronjob_dashboard.png)
