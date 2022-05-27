@@ -4,5 +4,11 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+
+Samuel is a data engineer and cloud solutions practitioner currently based in Berlin, DE.
+He occasionally blogs about DataOps, continuous integration and Cloud architecture design on AWS and GCP.
+
+
+- [Linkedin](https://www.linkedin.com/in/samuel-tseng/)
+
+- [CV](../assets/img/CV_SamuelTseng.pdf)
