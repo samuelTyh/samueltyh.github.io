@@ -23,7 +23,7 @@ timezone: Europe/Berlin
 
 title: samueltyh                          # the main title
 
-tagline: Dev, Data, Daily    # it will display as the sub-title
+tagline: DevOps, Data Engineering, Data Science    # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   
@@ -115,7 +115,7 @@ assets:
     # only works if `assets.self_host.enabled` is 'true'
     env:          # [development|production]
 
-paginate: 10
+paginate: 6
 
 # ------------ The following options are not recommended to be modified ------------------
 

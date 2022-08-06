@@ -6,9 +6,9 @@ image:
 category:
 - Data Engineering Learning Journey
 tags: devops linux docker k8s
-date: 2022-08-06 23:47 +0200
+date: 2022-08-07 00:03 +0200
 ---
-This post will keep the learning process and takeaways from the Kubesimplify workshops held by Saiyam Pathak. The motivation for me to catch up on this is to systematically learning by practising for DevOps mindset, in order to achieve double blade, Data Engineering + DevOps.
+This post will keep the learning process and takeaways from the [Kubesimplify workshops](https://kubesimplify.github.io/live-workshops/) held by [Saiyam Pathak](https://github.com/saiyam1814). The motivation for me to catch up on this DevOps topic is to systematically learning by practising for DevOps mindset, in order to achieve double blade stacks, facilitating Data Engineering tasks and projects via DevOps approaches.
 
 # Workshops List
 1. [Linux & Docker Fundamentals](#linux--docker-fundamentals) (Ongoing)
