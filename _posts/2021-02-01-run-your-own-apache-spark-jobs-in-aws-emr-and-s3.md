@@ -29,7 +29,7 @@ Of course, you have other choices like SDK for different languages, like [Python
 ### Idea and Practice
 We can choose the easy-checking cli command for pipeline, such as creating-cluster, add-steps, and terminate-clusters.
 The cli command from document is shown below.
-```
+```shell
 aws emr create-cluster \
 --name "My First EMR Cluster" \
 --release-label emr-5.31.0 \
@@ -41,7 +41,7 @@ aws emr create-cluster \
 ```
 
 Set the command as a variable to load in the next step, add 2 additional arguments `--query '[ClusterId]'`, `--output text` to change the output format and query the information we need, reference the variable `cluster_id` in the Shell scripts as below.
-```
+```shell
 cluster_id="$(aws emr create-cluster --name SparkifyEMR \
 --release-label emr-5.31.0 \
 --log-uri "s3://$clustername/logs/" \
@@ -56,7 +56,7 @@ echo -e "\nClusterId: $cluster_id"
 ```
 
 Set the second variable `step_id` and query it.
-```
+```shell
 step_id="$(aws emr add-steps \
 --cluster-id "$cluster_id" \
 --steps "Type=Spark,Name=SparkifyETL,ActionOnFailure=CONTINUE,\
@@ -67,7 +67,7 @@ echo -e "\nStepId: $step_id"
 ```
 
 Set a while loop to check Spark jobs is finished or not.
-```
+```shell
 describe_step="$(aws emr describe-step --cluster-id "$cluster_id" \
   --step-id "$step_id" --query 'Step.Status.State' --output text)"
 
@@ -89,7 +89,7 @@ done
 ```
 
 After finishing all jobs, terminate the cluster of the jobs complete without error.
-```
+```shell
 terminate_cluster="$(aws emr terminate-clusters \
 --cluster-ids "$cluster_id" \
 --query 'Cluster.Status.State' \

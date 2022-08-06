@@ -13,18 +13,18 @@ Azure Data Studio is a cool product that can easily connect MySQL (if you alread
 
 The 1st step, I decided to pull Postgres's docker image but not to install at root.
 
-```
+```bash
 $ docker pull postgres
 ```
 
 Second, run the container, remember to set the port for local connecting (the document didn't mention it)
-```
+```bash
 $ docker run --name postgres-docker -e POSTGRES_PASSWROD=secret_password -p 5432:5432 -d postgres
 ```
 
 then you will get container id, also can check it by `docker ps`
 
-```
+```bash
 CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                      NAMES
 ba01d334f4db        postgres              "docker-entrypoint.s…"   37 minutes ago      Up 37 minutes       0.0.0.0:5432->5432/tcp     postgres-docker
 ```

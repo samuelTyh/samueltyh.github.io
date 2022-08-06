@@ -30,7 +30,7 @@ Follow the instruction from Fivetran to setup the configuration, click [here](ht
 
 Lambda's sample function from Fivetran's document
 
-```
+```python
 import json
 def lambda_handler(request, context):
     # Fetch records using api calls
@@ -76,13 +76,13 @@ def api_response(state, secrets):
 
 Fivetran will stop the request if it gets a response has an attribute `hasMore` which equals `'false'`
 
-```
+```python
 response['hasMore'] = 'false'
 ```
 
 Which means, more than 1 pages response should be able to switch the value by a pointer. `false` should be able to altered to make Fivetran know that the request hasn't finished, the pointer should be updated as well once all pages are done. I'm sharing my implementation below to meet this requirement.
 
-```
+```python
 import datetime
 import asyncio
 from services import processor, cursor_formatter
@@ -145,7 +145,7 @@ First, we can see in `api_request` function, `state` is assigned by request form
 
 We retrieve the `cursor` and `page` at the beginning, cursor is for locating the timestamp of each response whether we've done already, and page is literally for locating which page we are at. Fivetran can tell if this is an initial request, or if it is a request that is still pending and should be continued.
 
-```
+```python
 try:
     cursor_value, page = state['cursor'], state["page"]
 except KeyError:
@@ -154,13 +154,13 @@ except KeyError:
 
 After processing, we will get a function return value `moreData` for the Lambda handler to continue or stop the request.
 
-```
+```python
 state = {'cursor': cursor_value, 'page': page, 'moreData': moreData}
 ```
 
 In this example, we have the return value from the handler to present continuing or stopping. Else we have no more new response from API, returning a timestamp and reset the page value to 0 for the next round requesting.
 
-```
+```python
 return {
     'state': state if state['moreData'] else {'cursor': cursor_formatter(datetime.datetime.now()), 'page': 0},
     'insert': insert,

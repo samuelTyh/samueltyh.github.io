@@ -39,7 +39,7 @@ Flask_Celery_example
 └── README.md
 ```
 #### Set up your Redis and Celery worker in docker-compose, the breaking point is to set up the celery worker's name well.
-```
+```yaml
 version: "3"
 
 services:
@@ -78,7 +78,7 @@ services:
 ```
 
 #### What the Dockerfile in this example looks like.
-```
+```docker
 FROM python:3.6.5
 
 WORKDIR /app
@@ -95,7 +95,7 @@ CMD [ "python", "./app.py" ]
 ```
 
 #### Initialize Celery worker and create asynchronous or scheduled task in celery_app.py
-```
+```python
 import config
 from celery import Celery
 
@@ -116,7 +116,7 @@ def func1(arg):
 ```
 
 #### Run task by Flask and check its status in app.py
-```
+```python
 import config
 from celery_app import func1
 from flask import Flask, request, jsonify, url_for, redirect
@@ -155,7 +155,7 @@ if __name__ == '__main__':
 ```
 
 #### After finishing the all setting, we can run the script on terminal below to create container and run it.
-```
+```shell
 $ cd Flask_Celery_example
 $ docker-compose build
 $ docker-compose run
